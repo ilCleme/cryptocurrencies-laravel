@@ -12,7 +12,7 @@ Here there is an example
 ```php
    $manager = $this->app['cryptocurrencies.manager'];
    $coinmarketcapGateway = $manager->getGateway('coinmarketcap');
-   $result = $coinmarketcapGateway->send('/v1/cryptocurrency/info', 'GET, ['query' => ['id' => '1,2']]);
+   $result = $coinmarketcapGateway->send('/v1/cryptocurrency/info', 'GET', ['query' => ['id' => '1,2']]);
 
    return $result;
 ```
