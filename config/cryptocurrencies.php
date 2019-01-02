@@ -61,7 +61,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Cryptocompare Default parameters
+    | Coinmarketcap Default parameters
     |--------------------------------------------------------------------------
     |
     | This are the default parameter used to send request to cryptocompare
