@@ -1,6 +1,11 @@
 # Cryptocurrencies API Laravel Wrapper
 Laravel wrapper for the major cryptocurrencies API, provides a easy way to use the third-part API.
 
+[![Latest Stable Version](https://poser.pugx.org/ilcleme/cryptocurrencies-laravel/v/stable)](https://packagist.org/packages/ilcleme/cryptocurrencies-laravel)
+[![Total Downloads](https://poser.pugx.org/ilcleme/cryptocurrencies-laravel/downloads)](https://packagist.org/packages/ilcleme/cryptocurrencies-laravel)
+[![Latest Unstable Version](https://poser.pugx.org/ilcleme/cryptocurrencies-laravel/v/unstable)](https://packagist.org/packages/ilcleme/cryptocurrencies-laravel)
+[![License](https://poser.pugx.org/ilcleme/cryptocurrencies-laravel/license)](https://packagist.org/packages/ilcleme/cryptocurrencies-laravel)
+
 Requirements
 ------------
 The minimum requirement by Cryptocompare API Laravel Wrapper is that you have 

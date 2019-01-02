@@ -2,7 +2,7 @@
     "name": "ilcleme/cryptocurrencies-laravel",
     "description": "Laravel package for cryptocurrencies api service",
     "type": "library",
-    "keywords": ["laravel", "crypto", "cryptocompare", "package"],
+    "keywords": ["laravel", "crypto", "cryptocompare", "coinmarketcap", "package"],
     "license": "MIT",
     "authors": [
         {
@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "php": "^7.1.3"
+        "php": "^7.1.3",
+        "guzzlehttp/guzzle": "^6.0"
     },
     "autoload": {
         "psr-4": {
