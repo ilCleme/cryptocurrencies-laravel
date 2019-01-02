@@ -1,0 +1,39 @@
+{
+    "name": "ilcleme/cryptocurrencies-laravel",
+    "description": "Laravel package for cryptocurrencies api service",
+    "type": "library",
+    "keywords": ["laravel", "crypto", "cryptocompare", "package"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mattia Clementi",
+            "email": "ilcleme@gmail.com",
+            "homepage": "https://mattiaclementi.it",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "IlCleme\\Cryptocurrencies\\": "src"
+        }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "IlCleme\\Cryptocurrencies\\Test\\": "tests/"
+      }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+              "IlCleme\\Cryptocurrencies\\Providers\\CryptocurrenciesServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5",
+        "orchestra/testbench": "^3.7"
+    }
+}
