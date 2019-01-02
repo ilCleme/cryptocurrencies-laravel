@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mattiaclementi
- * Date: 31/12/2018
- * Time: 11:08
- */
 
 namespace IlCleme\Cryptocurrencies\Gateways\Coinmarketcap;
 
