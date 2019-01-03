@@ -1,6 +1,6 @@
 API Reference for Coinmarketcap
 ------------
-In this time this gateway permit to send request to coinmarketcap.
+At the current status this gateway permit to send request to coinmarketcap.
 The send method of this gateway permits to pass three parameters: 
 - the endpoint;
 - the method of HTTP request;
@@ -10,12 +10,26 @@ The parameter array need to be populate with the right value for every single en
 Here there is an example
 
 ```php
-   $manager = $this->app['cryptocurrencies.manager'];
-   $coinmarketcapGateway = $manager->getGateway('coinmarketcap');
-   //set any type of endpoints, set the right parameter to it
-   $result = $coinmarketcapGateway->send('/v1/cryptocurrency/info', 'GET', ['query' => ['id' => '1,2']]);
+namespace App\Http\Controllers;
 
-   return $result;
+use IlCleme\Cryptocurrencies\Gateways\Coinmarketcap\CoinmarketcapGateway;
+
+class CryptoController extends Controller
+{
+    public function test()
+    {
+        $manager = app('cryptocurrencies.manager');
+        /** @var CoinmarketcapGateway $coinmarketcapGateway */
+        $coinmarketcapGateway = $manager->getGateway('coinmarketcap');
+
+        //parameters passed to the method are defined in accordance with the Coinmarketcap documentation of endpoint
+        $parameters = [
+            'query' => ['id' => '1,2']
+        ];
+        $result = $coinmarketcapGateway->send('/v1/cryptocurrency/info', 'GET', $parameters);
+        return $result;
+    }
+}
 ```
 **Coinmarketcap required an API key to receive the data**
  

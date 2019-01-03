@@ -1,3 +1,18 @@
+Gateways specification
+----------------------
+We have implemented four gateway to interact with cryptocompare API, here the full list:
+
+| Gateway name | Class [Namespace \IlCleme\Cryptocurrencies\Gateways]| Description |
+|---|---|---|
+| general | \Cryptocompare\CryptocompareGeneralInfoGateway | Use for every "General Info"  |
+| historical | \Cryptocompare\CryptocompareHistoricalGateway | Use for every "Historical Data" available endpoints |
+| price | \Cryptocompare\CryptocomparePriceGateway | Use for every "Price" available endpoints |
+| toplist | \Cryptocompare\CryptocompareTopListsGateway | Use for every "Toplists" available endpoints |
+
+In cryptocompare [docs](https://min-api.cryptocompare.com/documentation?key=Price) you can find all defined endpoints 
+
+Each implemented gateway corresponds to a specific section of docs.
+
 API Reference for Cryptocompare
 ------------
 Here the complete list of api implemented now.
@@ -34,4 +49,4 @@ TODO List
 ---------
 
 - [ ] Implementing the remaining API left
-- [ ] Add it to the docs reference
+- [ ] Add caching response feature as suggest by cryptocompare
