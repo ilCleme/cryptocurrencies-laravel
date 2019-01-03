@@ -30,7 +30,11 @@ class CoinmarketcapGatewayTest extends TestCase
         $response = $gateway->send('/v1/cryptocurrency/info?id=1,2');
         $this->assertIsString($response);
         $response = json_decode($response, true);
-        $this->assertEquals(0, array_get($response, 'status.error_code'));
+        if (!config('cryptocurrencies.coinmarketcap.api_key')) {
+            $this->assertEquals(401, array_get($response, 'status.error_code'));
+        } else {
+            $this->assertEquals(0, array_get($response, 'status.error_code'));
+        }
     }
 
     /**
