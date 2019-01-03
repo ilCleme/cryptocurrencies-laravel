@@ -28,7 +28,7 @@ class CryptocompareTopListsGateway extends CryptocompareGateway
     public function getToplistVolumeFullData($options = [])
     {
         return $this->send(
-            $this->endpoint . "/top/totalvolfull",
+            $this->endpoint."/top/totalvolfull",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -43,7 +43,7 @@ class CryptocompareTopListsGateway extends CryptocompareGateway
     public function getToplistMarketCapFullData($options = [])
     {
         return $this->send(
-            $this->endpoint . "/top/mktcapfull",
+            $this->endpoint."/top/mktcapfull",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -58,7 +58,7 @@ class CryptocompareTopListsGateway extends CryptocompareGateway
     public function getTopExchangesVolumeDataPair($options = [])
     {
         return $this->send(
-            $this->endpoint . "/top/exchanges",
+            $this->endpoint."/top/exchanges",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -73,7 +73,7 @@ class CryptocompareTopListsGateway extends CryptocompareGateway
     public function getTopExchangesFullDataPair($options = [])
     {
         return $this->send(
-            $this->endpoint . "/top/exchanges/full",
+            $this->endpoint."/top/exchanges/full",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -88,7 +88,7 @@ class CryptocompareTopListsGateway extends CryptocompareGateway
     public function getToplistPairVolume($options = [])
     {
         return $this->send(
-            $this->endpoint . "/top/volumes",
+            $this->endpoint."/top/volumes",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -103,7 +103,7 @@ class CryptocompareTopListsGateway extends CryptocompareGateway
     public function getToplistTradingPairs($options = [])
     {
         return $this->send(
-            $this->endpoint . "/top/pairs",
+            $this->endpoint."/top/pairs",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );

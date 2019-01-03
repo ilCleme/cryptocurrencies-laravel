@@ -30,7 +30,7 @@ class CryptocompareHistoricalGateway extends CryptocompareGateway
     public function getHistoricalDaily($options = [])
     {
         return $this->send(
-            $this->endpoint . "/histoday",
+            $this->endpoint."/histoday",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -45,7 +45,7 @@ class CryptocompareHistoricalGateway extends CryptocompareGateway
     public function getHistoricalHourly($options = [])
     {
         return $this->send(
-            $this->endpoint . "/histohour",
+            $this->endpoint."/histohour",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -60,7 +60,7 @@ class CryptocompareHistoricalGateway extends CryptocompareGateway
     public function getHistoricalMinute($options = [])
     {
         return $this->send(
-            $this->endpoint . "/histominute",
+            $this->endpoint."/histominute",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -75,7 +75,7 @@ class CryptocompareHistoricalGateway extends CryptocompareGateway
     public function getHistoricalDailyForTimestamp($options = [])
     {
         return $this->send(
-            $this->endpoint . "/pricehistorical",
+            $this->endpoint."/pricehistorical",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -90,7 +90,7 @@ class CryptocompareHistoricalGateway extends CryptocompareGateway
     public function getHistoricalDayAveragePrice($options = [])
     {
         return $this->send(
-            $this->endpoint . "/dayAvg",
+            $this->endpoint."/dayAvg",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -105,7 +105,7 @@ class CryptocompareHistoricalGateway extends CryptocompareGateway
     public function getHistoricalDailyExchangeVolume($options = [])
     {
         return $this->send(
-            $this->endpoint . "/exchange/histoday",
+            $this->endpoint."/exchange/histoday",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -120,7 +120,7 @@ class CryptocompareHistoricalGateway extends CryptocompareGateway
     public function getHistoricalHourlyExchangeVolume($options = [])
     {
         return $this->send(
-            $this->endpoint . "/exchange/histohour",
+            $this->endpoint."/exchange/histohour",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );

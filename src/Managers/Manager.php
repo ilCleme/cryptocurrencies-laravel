@@ -16,7 +16,7 @@ class Manager implements CryptcompareManager
      */
     public function getGateways()
     {
-        if (!$this->gateways) {
+        if (! $this->gateways) {
             return collect([]);
         }
 
@@ -31,11 +31,11 @@ class Manager implements CryptcompareManager
      */
     public function getGateway($gateway)
     {
-        if (!$this->gateways) {
+        if (! $this->gateways) {
             return false;
         }
 
-        return $this->gateways->first(function($item) use ($gateway){
+        return $this->gateways->first(function ($item) use ($gateway) {
             if ($item->getName() == $gateway) {
                 return $item;
             }
@@ -52,7 +52,7 @@ class Manager implements CryptcompareManager
      */
     public function addGateway(GatewayInterface $gateway)
     {
-        if (!$this->gateways) {
+        if (! $this->gateways) {
             $this->gateways = collect([]);
         }
 

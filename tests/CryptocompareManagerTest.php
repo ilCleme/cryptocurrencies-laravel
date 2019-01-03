@@ -24,7 +24,7 @@ class CryptocompareManagerTest extends TestCase
     {
         $manager = $this->app['cryptocurrencies.manager'];
         $gateways = $manager->getGateways();
-        $gateways->filter(function ($gateway){
+        $gateways->filter(function ($gateway) {
             $this->assertInstanceOf(GatewayInterface::class, $gateway);
         });
     }

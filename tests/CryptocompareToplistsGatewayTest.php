@@ -10,6 +10,7 @@ class CryptocompareToplistsGatewayTest extends TestCase
     //TODO: test protected and private method of CryptocompareTopListsGateway class
     /**
      * Check that the cryptocompare gateway is correctly instantiated
+     *
      * @return void
      */
     public function testCryptocompareTopListsGatewayInstance()

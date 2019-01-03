@@ -14,7 +14,7 @@ class CryptocompareGeneralInfoGateway extends CryptocompareGateway
 
         $this->endpointOptions = [
             'extraParams' => config('cryptocurrencies.cryptocompare.extraParams'),
-            'api_key' => config('cryptocurrencies.cryptocompare.api_key')
+            'api_key' => config('cryptocurrencies.cryptocompare.api_key'),
         ];
         $this->endpoint = 'https://min-api.cryptocompare.com';
     }
@@ -28,7 +28,7 @@ class CryptocompareGeneralInfoGateway extends CryptocompareGateway
     public function getRateLimit($options = [])
     {
         return $this->send(
-            $this->endpoint . "/stats/rate/limit",
+            $this->endpoint."/stats/rate/limit",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -43,7 +43,7 @@ class CryptocompareGeneralInfoGateway extends CryptocompareGateway
     public function getAllExchangesAndTradingPairs($options = [])
     {
         return $this->send(
-            $this->endpoint . "/data/v2/all/exchanges",
+            $this->endpoint."/data/v2/all/exchanges",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -58,7 +58,7 @@ class CryptocompareGeneralInfoGateway extends CryptocompareGateway
     public function getAllCoins($options = [])
     {
         return $this->send(
-            $this->endpoint . "/data/all/coinlist",
+            $this->endpoint."/data/all/coinlist",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -73,7 +73,7 @@ class CryptocompareGeneralInfoGateway extends CryptocompareGateway
     public function getAllExchangeGeneralInfo($options = [])
     {
         return $this->send(
-            $this->endpoint . "/data/exchanges/general",
+            $this->endpoint."/data/exchanges/general",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -88,7 +88,7 @@ class CryptocompareGeneralInfoGateway extends CryptocompareGateway
     public function getAllWalletGeneralInfo($options = [])
     {
         return $this->send(
-            $this->endpoint . "/data/wallets/general",
+            $this->endpoint."/data/wallets/general",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -103,7 +103,7 @@ class CryptocompareGeneralInfoGateway extends CryptocompareGateway
     public function getAllCryptoCardGeneralInfo($options = [])
     {
         return $this->send(
-            $this->endpoint . "/data/cards/general",
+            $this->endpoint."/data/cards/general",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );

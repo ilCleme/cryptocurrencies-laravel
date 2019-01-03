@@ -12,7 +12,7 @@ interface GatewayInterface
      * @param array $options Request options
      * @return mixed
      */
-    public function send($endpoint, $method = 'GET', $options = [] );
+    public function send($endpoint, $method = 'GET', $options = []);
 
     /**
      * Return name of gateway

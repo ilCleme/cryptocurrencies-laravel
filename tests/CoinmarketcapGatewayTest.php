@@ -10,6 +10,7 @@ class CoinmarketcapGatewayTest extends TestCase
     //TODO: test protected and private method of CoinmarketcapGateway class
     /**
      * Check that the Coinmarketcap gateway is correctly instantiated
+     *
      * @return void
      */
     public function testCoinmarketcapGatewayInstance()
@@ -56,7 +57,7 @@ class CoinmarketcapGatewayTest extends TestCase
         $gateway = $this->app[CoinmarketcapGateway::class];
         $response = $gateway->send('/v1/cryptocurrency/info', 'GET', [
             'headers' => ['X-CMC_PRO_API_KEY' => 'FalsyAPIKey'],
-            'query' => ['id' => '1,2']
+            'query' => ['id' => '1,2'],
         ]);
         $this->assertIsString($response);
         $response = json_decode($response, true);

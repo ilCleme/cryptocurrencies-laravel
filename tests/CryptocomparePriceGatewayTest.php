@@ -10,6 +10,7 @@ class CryptocomparePriceGatewayTest extends TestCase
     //TODO: test protected and private method of CryptocomparePriceGateway class
     /**
      * Check that the cryptocompare gateway is correctly instantiated
+     *
      * @return void
      */
     public function testCryptocomparePriceGatewayInstance()
@@ -30,9 +31,9 @@ class CryptocomparePriceGatewayTest extends TestCase
         $gateway = $this->app[CryptocomparePriceGateway::class];
         $response = $gateway->getSingleSymbolPrice();
         $content = json_decode($response, true);
-        $config = explode("," , config('cryptocurrencies.cryptocompare.tsym'));
+        $config = explode(",", config('cryptocurrencies.cryptocompare.tsym'));
 
-        array_filter($content, function($key) use ($config){
+        array_filter($content, function ($key) use ($config) {
             $this->assertContains($key, $config);
         }, ARRAY_FILTER_USE_KEY);
     }
@@ -62,8 +63,8 @@ class CryptocomparePriceGatewayTest extends TestCase
         $content = json_decode($response, true);
         $config = explode(',', array_get($fsyms, 'fsyms'));
 
-        array_filter($content, function($value, $key) use ($config){
-            $this->assertContains($key,$config);
+        array_filter($content, function ($value, $key) use ($config) {
+            $this->assertContains($key, $config);
         }, ARRAY_FILTER_USE_BOTH);
     }
 
@@ -93,8 +94,8 @@ class CryptocomparePriceGatewayTest extends TestCase
         $content = json_decode($response, true);
         $keysResponse = ['RAW', 'DISPLAY'];
 
-        array_filter($content, function($value, $key) use ($keysResponse){
-            $this->assertContains($key,$keysResponse);
+        array_filter($content, function ($value, $key) use ($keysResponse) {
+            $this->assertContains($key, $keysResponse);
         }, ARRAY_FILTER_USE_BOTH);
     }
 
@@ -124,8 +125,8 @@ class CryptocomparePriceGatewayTest extends TestCase
         $content = json_decode($response, true);
         $keysResponse = ['RAW', 'DISPLAY'];
 
-        array_filter($content, function($value, $key) use ($keysResponse){
-            $this->assertContains($key,$keysResponse);
+        array_filter($content, function ($value, $key) use ($keysResponse) {
+            $this->assertContains($key, $keysResponse);
         }, ARRAY_FILTER_USE_BOTH);
     }
 

@@ -19,9 +19,11 @@ class CryptocomparePriceGateway extends CryptocompareGateway
 
         $this->endpointOptions = [
             'fsym' => config('cryptocurrencies.cryptocompare.fsym'),
-            'fsyms' => config('cryptocurrencies.cryptocompare.fsym'),//TODO: improve manage of fsyms and fsym query parameter
+            'fsyms' => config('cryptocurrencies.cryptocompare.fsym'),
+            //TODO: improve manage of fsyms and fsym query parameter
             'tsym' => config('cryptocurrencies.cryptocompare.tsym'),
-            'tsyms' => config('cryptocurrencies.cryptocompare.tsym'),//TODO: improve manage of tsyms and tsym query parameter
+            'tsyms' => config('cryptocurrencies.cryptocompare.tsym'),
+            //TODO: improve manage of tsyms and tsym query parameter
             'e' => config('cryptocurrencies.cryptocompare.e'),
             'extraParams' => config('cryptocurrencies.cryptocompare.extraParams'),
         ];
@@ -36,7 +38,7 @@ class CryptocomparePriceGateway extends CryptocompareGateway
     public function getSingleSymbolPrice($options = [])
     {
         return $this->send(
-            $this->endpoint . "/price",
+            $this->endpoint."/price",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -51,7 +53,7 @@ class CryptocomparePriceGateway extends CryptocompareGateway
     public function getMultiSymbolPrice($options = [])
     {
         return $this->send(
-            $this->endpoint . "/pricemulti",
+            $this->endpoint."/pricemulti",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -67,7 +69,7 @@ class CryptocomparePriceGateway extends CryptocompareGateway
     public function getMultiSymbolPriceFull($options = [])
     {
         return $this->send(
-            $this->endpoint . "/pricemultifull",
+            $this->endpoint."/pricemultifull",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );
@@ -83,7 +85,7 @@ class CryptocomparePriceGateway extends CryptocompareGateway
     public function getCustomAverage($options = [])
     {
         return $this->send(
-            $this->endpoint . "/generateAvg",
+            $this->endpoint."/generateAvg",
             'GET',
             ['query' => array_merge($this->getEndpointConfiguration(), $options)]
         );

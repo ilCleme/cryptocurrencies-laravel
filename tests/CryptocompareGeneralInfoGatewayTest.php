@@ -10,6 +10,7 @@ class CryptocompareGeneralInfoGatewayTest extends TestCase
     //TODO: test protected and private method of CryptocompareGeneralInfoGateway class
     /**
      * Check that the cryptocompare gateway is correctly instantiated
+     *
      * @return void
      */
     public function testCryptocompareGeneralInfoGatewayInstance()
@@ -66,7 +67,7 @@ class CryptocompareGeneralInfoGatewayTest extends TestCase
         $gateway = $this->app[CryptocompareGeneralInfoGateway::class];
         $response = $gateway->getAllExchangeGeneralInfo();
 
-        if (!empty(config('cryptocurrencies.cryptocompare.api_key'))){
+        if (! empty(config('cryptocurrencies.cryptocompare.api_key'))) {
             $this->assertStringContainsString("Success", $response);
         } else {
             $this->assertStringContainsString("Error", $response);
@@ -83,12 +84,11 @@ class CryptocompareGeneralInfoGatewayTest extends TestCase
         $gateway = $this->app[CryptocompareGeneralInfoGateway::class];
         $response = $gateway->getAllWalletGeneralInfo();
 
-        if (!empty(config('cryptocurrencies.cryptocompare.api_key'))) {
+        if (! empty(config('cryptocurrencies.cryptocompare.api_key'))) {
             $this->assertStringContainsString("Success", $response);
         } else {
             $this->assertStringContainsString("Error", $response);
         }
-
     }
 
     /**
@@ -101,11 +101,10 @@ class CryptocompareGeneralInfoGatewayTest extends TestCase
         $gateway = $this->app[CryptocompareGeneralInfoGateway::class];
         $response = $gateway->getAllCryptoCardGeneralInfo();
 
-        if (!empty(config('cryptocurrencies.cryptocompare.api_key'))){
+        if (! empty(config('cryptocurrencies.cryptocompare.api_key'))) {
             $this->assertStringContainsString("Success", $response);
         } else {
             $this->assertStringContainsString("Error", $response);
         }
-
     }
 }

@@ -10,6 +10,7 @@ class CryptocompareHistoricalGatewayTest extends TestCase
     //TODO: test protected and private method of CryptocompareHistoricalGateway class
     /**
      * Check that the cryptocompare gateway is correctly instantiated
+     *
      * @return void
      */
     public function testCryptocompareHistoricalGatewayInstance()
@@ -102,9 +103,9 @@ class CryptocompareHistoricalGatewayTest extends TestCase
         $gateway = $this->app[CryptocompareHistoricalGateway::class];
         $response = $gateway->getHistoricalDailyForTimestamp();
         $content = json_decode($response, true);
-        $config = explode("," , config('cryptocurrencies.cryptocompare.fsym'));
+        $config = explode(",", config('cryptocurrencies.cryptocompare.fsym'));
 
-        array_filter($content, function($key) use ($config){
+        array_filter($content, function ($key) use ($config) {
             $this->assertContains($key, $config);
         }, ARRAY_FILTER_USE_KEY);
     }
