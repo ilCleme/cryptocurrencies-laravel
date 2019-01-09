@@ -42,4 +42,23 @@ class CoinmarketcapGateway extends Gateway
 
         return $response->getBody()->getContents();
     }
+
+    /**
+     * Return ids of symbols on coinmarketcap
+     *
+     * @param string $listingStatus
+     * @param int $start
+     * @param int $limit
+     * @param string $symbol
+     * @return mixed|string
+     */
+    public function getCoinmarketcapId($listingStatus = 'active', $start = 1, $limit = 100, $symbol = "")
+    {
+        return $this->send('/v1/cryptocurrency/map', 'GET', [
+            'listing_status' => $listingStatus,
+            'start' => $start,
+            'limit' => $limit,
+            'symbol' => $symbol,
+        ]);
+    }
 }

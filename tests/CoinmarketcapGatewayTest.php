@@ -20,9 +20,10 @@ class CoinmarketcapGatewayTest extends TestCase
     }
 
     /**
-     * Check success Rate Limit request
+     * Test success send to coinmarketcap
      * Assertion:
      * - the response body "error_code" is equal to 0
+     * - the response body "error_code" is equal to 401
      */
     public function testSuccessSend()
     {
@@ -66,5 +67,23 @@ class CoinmarketcapGatewayTest extends TestCase
         $this->assertIsString($response);
         $response = json_decode($response, true);
         $this->assertEquals(401, array_get($response, 'status.error_code'));
+    }
+
+    /**
+     * Check success Rate Limit request
+     * Assertion:
+     * - the response body "error_code" is equal to 0
+     */
+    public function testSuccessGetCoinmarketcapIds()
+    {
+        $gateway = $this->app[CoinmarketcapGateway::class];
+        $response = $gateway->getCoinmarketcapId();
+        $this->assertIsString($response);
+        $response = json_decode($response, true);
+        if (!config('cryptocurrencies.coinmarketcap.api_key')) {
+            $this->assertEquals(401, array_get($response, 'status.error_code'));
+        } else {
+            $this->assertEquals(0, array_get($response, 'status.error_code'));
+        }
     }
 }
